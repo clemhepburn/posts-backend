@@ -16,7 +16,8 @@ describe('API routes', () => {
       .send({
         id: '1',
         name: 'agnes',
-        post: 'hello i am agnes'
+        post: 'hello i am agnes',
+        fruit: 'apple'
       });
     expect(res.status).toBe(200);
     expect(res.body.id).toBe('1');
