@@ -14,13 +14,13 @@ describe('API routes', () => {
   it('posts a post to the API via POST', async () => {
     const res = await agent.post('/api/V1/posts')
       .send({
-        id: '1',
+        id: 1,
         name: 'agnes',
         post: 'hello i am agnes',
         fruit: 'apple'
       });
     expect(res.status).toBe(200);
-    expect(res.body.id).toBe('1');
+    expect(res.body.id).toBe(1);
     expect(res.body.name).toBe('agnes');
     expect(res.body.post).toBe('hello i am agnes');
   });
@@ -28,10 +28,10 @@ describe('API routes', () => {
   it('gets posts from the API via GET', async () => {
     const res = await agent.get('/api/V1/posts')
       .query({
-        id: '1'
+        id: 1
       });
     expect(res.status).toBe(200);
-    expect(res.body[0].id).toBe('1');
+    expect(res.body[0].id).toBe(1);
     expect(res.body[0].name).toBe('agnes');
     expect(res.body[0].post).toBe('hello i am agnes');
   }
